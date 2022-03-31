@@ -1,3 +1,9 @@
+""" 
+    author      : @NoahCardoza
+    email       : noahcardoza@gmail.com
+    discord     : MacHacker#8396
+    description : Convert a Crypto.com Debit Card transaction CSV export to one that's Quicken ready!
+"""
 
 import csv
 import os
@@ -53,6 +59,10 @@ def main():
     
     if not os.path.exists(args.input):
         print('Input file does not exist: {}'.format(args.input))
+        sys.exit(1)
+
+    if not args.input.endswith('.csv'):
+        print('Input file must be a CSV file: {}'.format(args.input))
         sys.exit(1)
     
     if args.output and os.path.exists(args.output):
