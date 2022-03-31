@@ -7,7 +7,10 @@ from datetime import datetime, timezone
 
 
 def convert_crypto_csv(input_csv, output_csv=None):
-    with open(input_csv, 'r') as fin, sys.stdout if output_csv is None else open(output_csv, 'w') as fout:
+    use_stdout = output_csv is None
+    fout = use_stdout and sys.stdout or open(output_csv, 'w')
+
+    with open(input_csv, 'r') as fin:
         reader = csv.DictReader(fin)
         writer = csv.DictWriter(fout, [
             'Date', 'Description', 'Original Description', 'Amount', 'Transaction Type', 'Category', 'Account Name', 'Lables', 'Notes'
@@ -34,7 +37,10 @@ def convert_crypto_csv(input_csv, output_csv=None):
                 'Account Name': 'Crypto.com Royal Indigo',
                 'Lables': '',
                 'Notes': ''
-            }) 
+            })
+        
+        if not use_stdout:
+            fout.close()
 
 
 def main():
@@ -58,8 +64,9 @@ def main():
             sys.exit(1)
     
     convert_crypto_csv(args.input, args.output)
-
-    print('Success!')
+    
+    if args.output:
+        print('Success!')
 
 
 if __name__ == '__main__':
