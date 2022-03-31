@@ -1,6 +1,6 @@
 # quickcro
 
-Convert a Crypto.com Debit Card transaction CSV export to one that's Quicken ready!
+Convert a [Crypto.com Debit Card](https://crypto.com/cards) transaction CSV export to one that's Quicken ready!
 
 ## Requirements
 
@@ -13,7 +13,7 @@ python <input(.csv)> [-o <output(.csv)>] [-h]
 ```
 # Roadmap
 
-+ Create a front end and host on Heoku to make more accessible.
++ Create a front-end and host on Heoku to make more accessible.
 
 ---
 
