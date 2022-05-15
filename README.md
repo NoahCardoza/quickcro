@@ -1,20 +1,8 @@
-# create-svelte
+# quickcro
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Convert a [Crypto.com Debit Card](https://crypto.com/cards) transaction CSV export to one that's Quicken ready!
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
++ Status: `WIP`
 
 ## Developing
 
